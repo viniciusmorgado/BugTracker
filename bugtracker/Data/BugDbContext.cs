@@ -12,7 +12,7 @@ namespace bugtracker.Data
     {
         public DbSet<Bug> Bugs { get; set; }
 
-        // Applu the configurations of the Config directory.
+        // Apply the configurations of the Config directory. 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
