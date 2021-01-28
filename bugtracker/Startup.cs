@@ -51,6 +51,10 @@ namespace bugtracker
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "BugsPage",
+                    pattern: "{controller=Bug}");
             });
         }
     }
