@@ -19,7 +19,6 @@ namespace bugtracker.Data.Config
             builder.Property(prop => prop.Version).IsRequired();
             builder.Property(prop => prop.Description).IsRequired();
             builder.Property(prop => prop.Status).IsRequired().HasDefaultValue("Em Análise");
-            // status need a default value here.
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using bugtracker.Data;
+using bugtracker.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +11,5 @@ namespace bugtracker.Controllers
     public class BugController : Controller
     {
         
-        public IActionResult Bugs()
-        {
-            return View();
-        }
-
-        public IActionResult Report()
-        {
-            return View();
-        }
     }
 }

@@ -21,6 +21,6 @@ namespace bugtracker.Models
         [Display(Name = "Status")]
         public string Status { get; set; }
         [Display(Name = "Tipo")]
-        public string Type { get; set; } // Security, Usability etc.
+        public string Type { get; set; }
     }
 }
