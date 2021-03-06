@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -17,12 +17,17 @@
     },
     "bugtracker": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    },
+    "Nginx": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\conta\\Downloads\\nginx-1.19.6\\nginx.exe",
+      "workingDirectory": "C:\\Users\\conta\\Downloads\\nginx-1.19.6"
     }
   }
 }
