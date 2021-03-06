@@ -19,11 +19,6 @@ namespace bugtracker.Data
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-        internal object ListAsync()
-        {
-            throw new NotImplementedException();
-        }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
