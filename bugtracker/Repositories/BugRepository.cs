@@ -16,9 +16,9 @@ namespace bugtracker.Repositories
             _bugDbContext = bugDbContext;
         }
 
-        public void Save(Bug bug)
+        public IEnumerable<Bug> GetBugs()
         {
-            _bugDbContext.Bugs.Add(bug);
+            return _bugDbContext.Bugs.ToList();
         }
     }
 }

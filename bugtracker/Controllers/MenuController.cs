@@ -28,10 +28,10 @@ namespace bugtracker.Controllers
             return await Task.Run(() => View());
         }
 
-        public async Task<IActionResult> Bugs()
-        {
-            return await Task.Run(() => View());
-        }
+        //public async Task<IActionResult> Bugs()
+        //{
+        //    return await Task.Run(() => View());
+        //}
 
         public async Task<IActionResult> Report()
         {

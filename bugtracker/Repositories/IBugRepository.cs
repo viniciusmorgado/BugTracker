@@ -1,4 +1,5 @@
-﻿using bugtracker.Models;
+﻿using bugtracker.Data;
+using bugtracker.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,6 @@ namespace bugtracker.Repositories
 {
     public interface IBugRepository
     {
-        void Save(Bug bug);
+        IEnumerable<Bug> GetBugs();
     }
 }

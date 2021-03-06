@@ -1,4 +1,4 @@
-﻿@model Bug
+﻿@model bugtracker.Models.Bug
 
 @{
     ViewData["Title"] = "Report";
@@ -7,26 +7,47 @@
 <h5>Reportar</h5>
 <br />
 @{
+
     <table class="table">
         <tr>
-            @Html.DisplayNameFor(model => model.Title)
-            @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+            @using (Html.BeginForm("Title", "Bug", FormMethod.Post, new { }))
+            {
+                @Html.DisplayNameFor(model => model.Title)
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+            }
         </tr>
         <tr>
-            @Html.DisplayNameFor(model => model.Description)
-            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+            @using (Html.BeginForm("Description", "Bug", FormMethod.Post, new { }))
+            {
+                @Html.DisplayNameFor(model => model.Description)
+                @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+            }
         </tr>
         <tr>
-            @Html.DisplayNameFor(model => model.Product)
-            @Html.TextBoxFor(model => model.Product, new { @class = "form-control" })
+            @using (Html.BeginForm("Product", "Bug", FormMethod.Post, new { }))
+            {
+                @Html.DisplayNameFor(model => model.Product)
+                @Html.TextBoxFor(model => model.Product, new { @class = "form-control" })
+            }
         </tr>
         <tr>
-            @Html.DisplayNameFor(model => model.Version)
-            @Html.TextBoxFor(model => model.Version, new { @class = "form-control" })
+            @using (Html.BeginForm("Version", "Bug", FormMethod.Post, new { }))
+            {
+                @Html.DisplayNameFor(model => model.Version)
+                @Html.TextBoxFor(model => model.Version, new { @class = "form-control" })
+            }
         </tr>
         <tr>
-            @Html.DisplayNameFor(model => model.Type)
-            @Html.TextBoxFor(model => model.Type, new { @class = "form-control" })
+            @using (Html.BeginForm("Type", "Bug", FormMethod.Post, new { }))
+            {
+                @Html.DisplayNameFor(model => model.Type)
+                @Html.TextBoxFor(model => model.Type, new { @class = "form-control" })
+            }
         </tr>
     </table>
+    <input type="submit" value="Reportar" />
+    <div class="col-md-offset-2 col-md-10" style="color:green">
+        @ViewBag.Message
+    </div>
+
 }
