@@ -9,9 +9,10 @@
 
 .box-1 {
     flex: 1;
-    
+    justify-content: space-around;
 }
 
 .box-2 {
     flex: 1;
+    justify-content: space-between;
 }
