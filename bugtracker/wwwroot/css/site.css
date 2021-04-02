@@ -29,10 +29,22 @@ a {
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+
+table, td, th {
+  width: 100px;
+  text-align:center;
+}
+
+table.menu {
+  width: auto;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .border-top {

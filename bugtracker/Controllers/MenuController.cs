@@ -1,4 +1,6 @@
-﻿using bugtracker.Models;
+﻿using bugtracker.Data;
+using bugtracker.Models;
+using bugtracker.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,26 +14,28 @@ namespace bugtracker.Controllers
     public class MenuController : Controller
     {
         private readonly ILogger<MenuController> _logger;
-
+        private readonly IBugRepository _bugRepository;
         public MenuController(ILogger<MenuController> logger)
         {
             _logger = logger;
+            _bugRepository = new BugRepository(new BugDbContext());
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
+        {
+            var bugs = from bug in _bugRepository.GetBugs()
+                       select bug;
+            return View(bugs);
+        }
+        /*public async Task<IActionResult> Index()
         {
             return await Task.Run(() => View());
-        }
+        }*/
 
         public async Task<IActionResult> Privacy()
         {
             return await Task.Run(() => View());
         }
-
-        //public async Task<IActionResult> Bugs()
-        //{
-        //    return await Task.Run(() => View());
-        //}
 
         public async Task<IActionResult> Report()
         {
