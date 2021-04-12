@@ -9,8 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-* Data/TempData.cs
 * TempData.cs
+* /home/morgado/Documents/Projects/bugtracker/bugtracker/Data/Temp
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
