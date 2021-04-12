@@ -19,11 +19,22 @@ namespace bugtracker.Data
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
+        // For production only.
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer("Data Source = localhost; Initial Catalog = BugData; Integrated Security = SSPI");
+        //    }
+        // }
+
+        // For developer enviroment only
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source = localhost; Initial Catalog = BugData; Integrated Security = SSPI");
+		        TempDb stringData = new TempDb();
+		        stringData.getString(optionsBuilder);
             }
         }
     }
