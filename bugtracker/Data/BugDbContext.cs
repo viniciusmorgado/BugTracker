@@ -20,6 +20,7 @@ namespace bugtracker.Data
         }
 
         // For production only.
+
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         // {
         //     if (!optionsBuilder.IsConfigured)
@@ -29,11 +30,12 @@ namespace bugtracker.Data
         // }
 
         // For developer enviroment only
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-		        TempDb stringData = new TempDb();
+		        TempString stringData = new TempString();
 		        stringData.getString(optionsBuilder);
             }
         }
