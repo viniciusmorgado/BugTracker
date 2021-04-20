@@ -1,4 +1,5 @@
-﻿using bugtracker.Models;
+﻿using bugtracker.Data.Temp;
+using bugtracker.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
