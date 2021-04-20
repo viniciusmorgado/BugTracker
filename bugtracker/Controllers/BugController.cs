@@ -18,11 +18,11 @@ namespace bugtracker.Controllers
             this._bugRepository = new BugRepository(new BugDbContext());
         }
 
-        public IActionResult Bugs()
+        public async Task<IActionResult> Bugs()
         {
             var bugs = from bug in _bugRepository.GetBugs()
                        select bug;
-            return View(bugs);
+            return await Task.Run(() => View(bugs));
         }      
     }
 }
