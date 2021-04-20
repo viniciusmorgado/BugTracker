@@ -60,6 +60,10 @@ namespace bugtracker
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Menu}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "bugController",
+                    pattern: "{controller=Bug}/{action=Bugs}");
             });
         }
     }
