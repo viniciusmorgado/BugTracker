@@ -23,6 +23,6 @@ namespace bugtracker.Controllers
             var bugs = from bug in _bugRepository.GetBugs()
                        select bug;
             return await Task.Run(() => View(bugs));
-        }      
+        }
     }
 }
