@@ -25,15 +25,9 @@ namespace bugtracker
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc();
             services.AddControllersWithViews();
-
-            // services.AddHttpClient();
-
-            // Data access dependency
             services.AddTransient<IBugRepository, BugRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            // Always need to execute DbContext as a service on startup?
             services.AddTransient<BugDbContext>();
         }
 
