@@ -30,8 +30,6 @@ namespace bugtracker.Data
         //    }
         // }
 
-        // For developer enviroment only
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
