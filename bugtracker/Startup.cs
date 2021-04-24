@@ -29,6 +29,8 @@ namespace bugtracker
             services.AddTransient<IBugRepository, BugRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<BugDbContext>();
+            // Identity
+            services.AddRazorPages();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -47,6 +49,9 @@ namespace bugtracker
 
             app.UseRouting();
 
+            // Identity
+            app.UseAuthentication();
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -58,6 +63,8 @@ namespace bugtracker
                 endpoints.MapControllerRoute(
                     name: "bugController",
                     pattern: "{controller=Bug}/{action=Bugs}");
+
+                endpoints.MapRazorPages();
             });
         }
     }
