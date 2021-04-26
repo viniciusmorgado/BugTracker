@@ -9,7 +9,7 @@ namespace bugtracker.Areas.Identity.Data
     // Add profile data for application users by adding properties to the bugtrackerUser class
     public class bugtrackerUser : IdentityUser
     {
-        public string Email { get; set; }
+        public override string Email { get; set; }
         public string Password { get; set; }
     }
 }

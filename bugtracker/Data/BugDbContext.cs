@@ -34,8 +34,8 @@ namespace bugtracker.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-		        TempString stringData = new TempString();
-		        stringData.getString(optionsBuilder);
+                TempString stringData = new TempString();
+                stringData.getString(optionsBuilder);
             }
         }
     }
