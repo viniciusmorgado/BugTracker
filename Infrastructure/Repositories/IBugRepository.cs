@@ -6,5 +6,7 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
     public interface IBugRepository
     {
         IEnumerable<Bug> GetBugs();
+
+        //IEnumerable<Bug> GetBugs(string Status);
     }   
 }

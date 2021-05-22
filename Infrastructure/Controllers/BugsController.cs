@@ -22,6 +22,10 @@ namespace DonattoTech.BugTracker.Infrastructure.Controllers
         public IEnumerable<Bug> Get() =>
             _bugRepository.GetBugs();
 
+        //[HttpGet]
+        //public IEnumerable<Bug> Get(string Status) =>
+        //    _bugRepository.GetBugs(Status);
+
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
         public string Get(int id) =>

@@ -16,7 +16,28 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
 
         public IEnumerable<Bug> GetBugs()
         {
-            return _bugDbContext.Bugs.ToList();
+            try
+            {
+                return _bugDbContext.Bugs.ToList();
+            }
+            catch (System.Exception ex)
+            {
+
+                throw new System.Exception("Não foi possível receber a lista de bugs.", ex);
+            }
         }
+
+        //public IEnumerable<Bug> GetBugs(string Status)
+        //{
+        //    try
+        //    {
+        //        return (IEnumerable<Bug>)_bugDbContext.Bugs.Select(x => x.Status);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+
+        //        throw new System.Exception("Não foi possível receber a lista de bugs.", ex);
+        //    }
+        //}
     }
 }

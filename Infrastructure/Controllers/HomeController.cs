@@ -26,8 +26,13 @@ namespace DonattoTech.BugTracker.Interface.Controllers
             return await Task.Run(() => View());
         }
 
-        public async Task<IActionResult> Bug()
+        public async Task<IActionResult> Bug(string status)
         {
+            //if (status != null)
+            //{
+            //    var bugListWithFilter = bugsController.Get(status);
+            //    return await Task.Run(() => View(bugListWithFilter));
+            //}
             var bugsList = bugsController.Get();
             return await Task.Run(() => View(bugsList));
         }
