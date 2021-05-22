@@ -24,11 +24,9 @@ namespace DonattoTech.BugTracker.Infrastructure.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+        public string Get(int id) =>
+            "value";
+        
         // POST api/<ValuesController>
         [HttpPost]
         public void Post([FromBody] string value)
