@@ -1,6 +1,15 @@
 ﻿@model IEnumerable<DonattoTech.BugTracker.Core.Models.Bug>
 @{
     ViewData["Title"] = "Home Page";
+    string[] TableHeaders = new string[]
+    {
+       "Titulo"
+      ,"Descrição"
+      ,"Produto"
+      ,"Versão"
+      ,"Status"
+      ,"Tipo"
+    };
 }
 
 <section>
@@ -10,24 +19,14 @@
                 <h5>Novos Bugs</h5><br>
                 <table class="table">
                     <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Title)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Description)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Product)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Version)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Status)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Type)
-                        </th>
+                        @{ 
+                            foreach (var head in TableHeaders)
+                            {
+                                <th>
+                                    @head
+                                </th>
+                            }
+                        }
                     </tr>
 
                     @if (Model != null)
@@ -63,25 +62,15 @@
             <div>
                 <h5>Bugs Resolvidos</h5><br>
                 <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Title)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Description)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Product)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Version)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Status)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Type)
-                        </th>
+                     <tr>
+                        @{ 
+                            foreach (var head in TableHeaders)
+                            {
+                                <th>
+                                    @head
+                                </th>
+                            }
+                        }
                     </tr>
 
                     @if (Model != null)
