@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DonattoTech.BugTracker.Infrastructure.Controllers;
+using System.Threading.Tasks;
 
 namespace DonattoTech.BugTracker.Interface.Controllers
 {
@@ -14,26 +15,26 @@ namespace DonattoTech.BugTracker.Interface.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var bugsList = bugsController.Get();
-            return View(bugsList);
+            return await Task.Run(() => View(bugsList));
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Privacy()
         {
-            return View();
+            return await Task.Run(() => View());
         }
 
-        public IActionResult Bug()
+        public async Task<IActionResult> Bug()
         {
             var bugsList = bugsController.Get();
-            return View(bugsList);
+            return await Task.Run(() => View(bugsList));
         }
 
-        public IActionResult Report()
+        public async Task<IActionResult> Report()
         {
-            return View();
+            return await Task.Run(() => View());
         }
     }
 }
