@@ -60,7 +60,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 .footer {
   position: absolute;
@@ -68,4 +68,43 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+/* GRID */
+
+@media(min-width: 968px) {
+    .container-1 {
+        display: flex;
+    }
+}
+
+.container-1 div {
+    padding-right: 50px;
+}
+
+/* First line */
+.box-1 {
+    flex: 1;
+}
+
+.box-2 {
+    flex: 1;
+}
+
+.box-3 {
+    flex: 1;
+}
+
+/* Second line */
+
+.box-4 {
+    flex: 1;
+}
+
+.box-5 {
+    flex: 1;
+}
+
+.box-6 {
+    flex: 1;
 }
