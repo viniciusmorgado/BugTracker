@@ -108,3 +108,20 @@ body {
 .box-6 {
     flex: 1;
 }
+
+.grid-base {
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.main-title {
+    padding-bottom: 30px;
+}
+
+.logo-spacing {
+    padding-right: 10px;
+}
+
+.index-header-text {
+    padding-bottom: 30px;
+}
