@@ -7,6 +7,6 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
     {
         IEnumerable<Bug> GetBugs();
 
-        //IEnumerable<Bug> GetBugs(string Status);
+        IEnumerable<Bug> GetSolvedBugs();
     }   
 }

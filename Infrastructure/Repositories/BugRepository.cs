@@ -27,17 +27,17 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
             }
         }
 
-        //public IEnumerable<Bug> GetBugs(string Status)
-        //{
-        //    try
-        //    {
-        //        return (IEnumerable<Bug>)_bugDbContext.Bugs.Select(x => x.Status);
-        //    }
-        //    catch (System.Exception ex)
-        //    {
+       public IEnumerable<Bug> GetSolvedBugs()
+       {
+            try
+            {
+                return _bugDbContext.Bugs.Where(x => x.Status == "Resolvido");
+            }
+            catch (System.Exception ex)
+            {
 
-        //        throw new System.Exception("Não foi possível receber a lista de bugs.", ex);
-        //    }
-        //}
+                throw new System.Exception("Não foi possível receber a lista de bugs.", ex);
+            }
+       }
     }
 }
