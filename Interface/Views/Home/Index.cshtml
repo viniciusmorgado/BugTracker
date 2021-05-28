@@ -42,26 +42,7 @@
                         {
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Title)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Description)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Product)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Version)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Status)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Type)
-                                    </td>
-                                </tr>
+                                 @await Html.PartialAsync("_Bug", item)
                             }
                         }
                     </table>
@@ -102,29 +83,10 @@
 
                     @if (Model != null)
                     {
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Title)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Description)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Product)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Version)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Status)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Type)
-                                </td>
-                            </tr>
-                        }
+                           @foreach (var item in Model)
+                           {
+                                 @await Html.PartialAsync("_Bug", item)
+                           }
                     }
                 </table>
             </div>

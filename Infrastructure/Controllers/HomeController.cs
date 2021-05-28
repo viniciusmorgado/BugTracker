@@ -17,7 +17,8 @@ namespace DonattoTech.BugTracker.Interface.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var bugsList = bugsController.GetSolved();
+            var bugsList = bugsController.Get();
+            var bugsListSolved = bugsController.GetSolved();
             return await Task.Run(() => View(bugsList));
         }
 
@@ -26,10 +27,9 @@ namespace DonattoTech.BugTracker.Interface.Controllers
             return await Task.Run(() => View());
         }
 
-        public async Task<IActionResult> Bug(string status)
+        public async Task<IActionResult> Bug()
         {
-            var bugsList = bugsController.Get();
-            return await Task.Run(() => View(bugsList));
+            return await Task.Run(() => View());
         }
 
         public async Task<IActionResult> Report()
