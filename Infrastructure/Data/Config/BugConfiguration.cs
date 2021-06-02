@@ -1,6 +1,8 @@
 ﻿using DonattoTech.BugTracker.Core.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 
 namespace DonattoTech.BugTracker.Infrastructure.Data.Config
 {
@@ -15,6 +17,7 @@ namespace DonattoTech.BugTracker.Infrastructure.Data.Config
             builder.Property(prop => prop.Version).IsRequired();
             builder.Property(prop => prop.Description).IsRequired();
             builder.Property(prop => prop.Status).IsRequired().HasDefaultValue("Em Análise");
+            builder.Property(prop => prop.BeginDate).IsRequired().HasDefaultValue(DateTime.Today);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace DonattoTech.BugTracker.Infrastructure.Controllers
 
         public BugsController()
         {
-            this._bugRepository = new BugRepository(new BugDbContext());
+            _bugRepository = new BugRepository(new BugDbContext());
         }
 
         // GET: api/<ValuesController>
@@ -27,27 +27,25 @@ namespace DonattoTech.BugTracker.Infrastructure.Controllers
         public IEnumerable<Bug> GetSolved() =>
             _bugRepository.GetSolvedBugs();
 
+        [HttpGet]
+        public IEnumerable<Bug> GetLastMonths() =>
+            _bugRepository.GetLastOneMonthBugs();
+
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
         public string Get(int id) =>
             "value";
-        
+
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        public void Post([FromBody] string value) { }
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        public void Put(int id, [FromBody] string value) { }
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        public void Delete(int id) { }
     }
 }

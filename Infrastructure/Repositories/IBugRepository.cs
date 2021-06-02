@@ -1,5 +1,6 @@
 ﻿using DonattoTech.BugTracker.Core.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DonattoTech.BugTracker.Infrastructure.Repositories
 {
@@ -8,5 +9,7 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
         IEnumerable<Bug> GetBugs();
 
         IEnumerable<Bug> GetSolvedBugs();
+
+        IEnumerable<Bug> GetLastOneMonthBugs();
     }   
 }

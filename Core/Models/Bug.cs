@@ -12,5 +12,6 @@ namespace DonattoTech.BugTracker.Core.Models
         public string Version { get; set; }
         public string Status { get; set; }
         public string Type { get; set; }
+        public DateTime BeginDate { get; set; }
     }
 }

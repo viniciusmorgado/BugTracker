@@ -1,7 +1,10 @@
 ﻿using DonattoTech.BugTracker.Core.Models;
 using DonattoTech.BugTracker.Infrastructure.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace DonattoTech.BugTracker.Infrastructure.Repositories
 {
@@ -18,7 +21,7 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
         {
             try
             {
-                return _bugDbContext.Bugs.ToList();
+               return _bugDbContext.Bugs.ToList();
             }
             catch (System.Exception ex)
             {
@@ -39,5 +42,11 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
                 throw new System.Exception("Não foi possível receber a lista de bugs.", ex);
             }
        }
+
+        public IEnumerable<Bug> GetLastOneMonthBugs()
+        {
+            return _bugDbContext.Bugs.Where(x =>
+                DateTime.Compare(x.BeginDate, DateTime.Today.AddMonths(-1)) >= 0);
+        }
     }
 }

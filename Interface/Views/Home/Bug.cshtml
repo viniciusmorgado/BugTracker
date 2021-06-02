@@ -9,15 +9,35 @@
       ,"Versão"
       ,"Status"
       ,"Tipo"
+      ,"Inclusão"
     };
 }
 
 <section>
     <div class="grid-base">
-        <h5>Bugs recentes</h5><br>
-        @*@foreach (var item in Model)
-        {
-            @await Html.PartialAsync("_Bug", item)
-        }*@
+        
+        <h1>Bugs</h1>
+        <p>Todos os bugs relatados.</p>
+
+       <table class="table">
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                 }
+            </tr>
+
+            @if (Model != null)
+            {
+                @foreach (var item in Model)
+                {
+                    @await Html.PartialAsync("_Bug", item)
+                }
+            }
+       </table>
     </div>
 </section>
