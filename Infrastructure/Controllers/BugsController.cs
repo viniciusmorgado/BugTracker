@@ -3,6 +3,7 @@ using DonattoTech.BugTracker.Infrastructure.Data;
 using DonattoTech.BugTracker.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DonattoTech.BugTracker.Infrastructure.Controllers
 {
@@ -17,28 +18,31 @@ namespace DonattoTech.BugTracker.Infrastructure.Controllers
             _bugRepository = new BugRepository(new BugDbContext());
         }
 
-        // GET: api/<ValuesController>
+        // GET: api/<ValuesController> - Get all the bugs.
         [HttpGet]
         public IEnumerable<Bug> Get() =>
             _bugRepository.GetBugs();
 
-        // GET: api/<ValuesController> - bugs with solved status
+        // GET: api/<ValuesController> - Bugs with solved status.
         [HttpGet]
         public IEnumerable<Bug> GetSolved() =>
             _bugRepository.GetSolvedBugs();
 
+        // GET: api/<ValuesController> - Bugs add only in the last month.
         [HttpGet]
         public IEnumerable<Bug> GetLastMonths() =>
             _bugRepository.GetLastOneMonthBugs();
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id) =>
-            "value";
+        //[HttpGet("{id}")]
+        //public Task<Bug> Get(int id) =>
+        //    _bugRepository.GetOneItem(id);
 
+        // POST api/bugs
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] string value) { }
+        public void Post([FromBody] Bug bug) =>
+            _bugRepository.PostANewBug(bug);
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]

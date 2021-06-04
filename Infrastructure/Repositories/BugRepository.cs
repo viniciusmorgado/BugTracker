@@ -23,10 +23,10 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
             {
                return _bugDbContext.Bugs.ToList();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
 
-                throw new System.Exception("Não foi possível receber a lista de bugs.", ex);
+                throw new Exception("Não foi possível receber a lista de bugs.", ex);
             }
         }
 
@@ -36,17 +36,45 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
             {
                 return _bugDbContext.Bugs.Where(x => x.Status == "Resolvido");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
 
-                throw new System.Exception("Não foi possível receber a lista de bugs.", ex);
+                throw new Exception("Não foi possível receber a lista de bugs.", ex);
             }
        }
 
         public IEnumerable<Bug> GetLastOneMonthBugs()
         {
-            return _bugDbContext.Bugs.Where(x =>
-                DateTime.Compare(x.BeginDate, DateTime.Today.AddMonths(-1)) >= 0);
+            try
+            {
+                return _bugDbContext.Bugs.Where(x =>
+                    DateTime.Compare(x.BeginDate, DateTime.Today.AddMonths(-1)) >= 0);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Não foi possível receber a lista de bugs.", ex);
+            }
         }
+
+        public async Task<Bug> PostANewBug(Bug bug)
+        {
+            try 
+            {
+                var result = _bugDbContext.Bugs.Add(bug);
+                _bugDbContext.SaveChanges();
+                return await Task.Run(() => result.Entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível gravar as informações no banco de dados.", ex);
+            }
+        }
+
+        //public async Task<Bug> GetOneItem(int value)
+        //{
+        //    return _bugDbContext.Bugs.Where(x => x.Id == value.)
+        //        .Select(a => a.Id).First();
+        //}
     }
 }

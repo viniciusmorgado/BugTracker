@@ -11,5 +11,9 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
         IEnumerable<Bug> GetSolvedBugs();
 
         IEnumerable<Bug> GetLastOneMonthBugs();
+
+        Task<Bug> PostANewBug(Bug bug);
+
+        //Task<Bug> GetOneItem(int value);
     }   
 }

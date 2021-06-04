@@ -2,8 +2,6 @@
 using Microsoft.Extensions.Logging;
 using DonattoTech.BugTracker.Infrastructure.Controllers;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using DonattoTech.BugTracker.Core.Models;
 
 namespace DonattoTech.BugTracker.Interface.Controllers
 {
@@ -11,7 +9,6 @@ namespace DonattoTech.BugTracker.Interface.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly BugsController bugsController = new BugsController();
-
 
         public HomeController(ILogger<HomeController> logger)
         {
