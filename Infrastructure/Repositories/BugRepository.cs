@@ -93,5 +93,15 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
             }
             return bugForDelete;
         }
+
+        //public async Task<Bug> UpdateBugs(int id)
+        //{
+            
+        //    var bugForUpdate = _bugDbContext.Bugs.Attach(id);
+        //    await Task.Run(() => bugForUpdate.State = Microsoft.EntityFrameworkCore.EntityState.Modified);
+        //    _bugDbContext.SaveChanges();
+        //    return bugForUpdate;
+        //}
+        
     }
 }

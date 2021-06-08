@@ -18,6 +18,8 @@ namespace DonattoTech.BugTracker.Infrastructure.Controllers
             _bugRepository = new BugRepository(new BugDbContext());
         }
 
+        #region GET
+        
         // GET: api/<ValuesController>
         [HttpGet]
         public IEnumerable<Bug> Get() =>
@@ -38,19 +40,33 @@ namespace DonattoTech.BugTracker.Infrastructure.Controllers
         public Task<Bug> Get(int id) =>
             _bugRepository.GetOneItem(id);
 
+        #endregion
+
+        #region POST
+
         // POST api/bugs
         // POST api/<ValuesController>
         [HttpPost]
         public void Post([FromBody] Bug bug) =>
             _bugRepository.PostANewBug(bug);
 
+        #endregion
+
+        #region UPDATE
+
         // PUT api/<ValuesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value) { }
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value) { }
+
+        #endregion
+
+        #region DELETE
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id) =>
             _bugRepository.DeleteBugs(id);
+
+        #endregion
     }
 }
