@@ -71,10 +71,27 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
             }
         }
 
-        //public async Task<Bug> GetOneItem(int value)
-        //{
-        //    return _bugDbContext.Bugs.Where(x => x.Id == value.)
-        //        .Select(a => a.Id).First();
-        //}
+        public async Task<Bug> GetOneItem(int value)
+        {
+            try
+            {
+                return await Task.Run(() => _bugDbContext.Bugs.Find(value));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível encontrar as informações no banco de dados.", ex);
+            }
+        }
+
+        public async Task<Bug> DeleteBugs(int id)
+        {
+            var bugForDelete = _bugDbContext.Bugs.Find(id);
+            if (bugForDelete != null)
+            {
+                await Task.Run(() => _bugDbContext.Bugs.Remove(bugForDelete));
+                _bugDbContext.SaveChanges();
+            }
+            return bugForDelete;
+        }
     }
 }

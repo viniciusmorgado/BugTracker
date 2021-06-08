@@ -14,6 +14,8 @@ namespace DonattoTech.BugTracker.Infrastructure.Repositories
 
         Task<Bug> PostANewBug(Bug bug);
 
-        //Task<Bug> GetOneItem(int value);
+        Task<Bug> GetOneItem(int value);
+
+        Task<Bug> DeleteBugs(int id);
     }   
 }
